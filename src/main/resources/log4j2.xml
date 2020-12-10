@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration>
     <Properties>
-        <Property name="basePath">C:\\Users\\bille\\Documents\\Java\\SpringAOP\\logs</Property>
+        <Property name="basePath">/home/billel/Documents/Java/SpringDataJpa/logs</Property>
     </Properties>
  
     <Appenders>
