@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hibernate-mapping xmlns="http://www.hibernate.org/xsd/hibernate-mapping" 
+			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+			xsi:schemaLocation="http://www.hibernate.org/xsd/hibernate-mapping http://www.hibernate.org/xsd/hibernate-mapping/hibernate-mapping-4.0.xsd" 
+			package="com.oozeander.model" schema="default_schema">
+					
+	<class name="PersonHbm" table="persons_hbm">
+		<meta attribute="class-description">
+			Person Class for testing HBM Mapping in Spring Data JPA
+		</meta>
+		<id name="id" type="long" column="person_id">
+			<generator class="identity"/>
+		</id>
+		<property name="firstname" type="string" column="person_firstname" length="16" not-null="true"/>
+		<property name="lastname" type="string" column="person_lastname" length="32" not-null="true"/>
+		<property name="age" type="integer" column="person_age" not-null="true"/>
+		<set name="emails" table="user_emails_hbm" fetch="join" lazy="false">
+			<key column="person_id"/>
+			<element type="string" column="email"/>
+		</set>
+	</class>	
+</hibernate-mapping>
